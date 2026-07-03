@@ -527,6 +527,215 @@ button {
   letter-spacing: 0.04em;
 }
 
+/* ===== FLASH SECTIONS ===== */
+.flash-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.flash-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.flash-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px -20px rgba(30,31,92,0.3);
+}
+
+.flash-card .flash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border);
+}
+.flash-card .flash-header h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy-900);
+}
+.flash-card .flash-header h3 i {
+  color: var(--red);
+  margin-right: 8px;
+}
+.flash-card .flash-header a {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--red);
+  transition: color 0.3s ease;
+}
+.flash-card .flash-header a:hover {
+  color: var(--red-dark);
+}
+
+/* Gallery Flash */
+.gallery-flash-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.gallery-flash-grid .gallery-thumb {
+  aspect-ratio: 1 / 1;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--navy-100);
+  transition: transform 0.3s ease;
+}
+.gallery-flash-grid .gallery-thumb:hover {
+  transform: scale(1.03);
+}
+.gallery-flash-grid .gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Announcements Slideshow */
+.announcement-slideshow {
+  position: relative;
+  overflow: hidden;
+  min-height: 140px;
+}
+.announcement-slide {
+  display: none;
+  padding: 5px 0;
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+.announcement-slide.active {
+  display: block;
+}
+.announcement-slide .slide-badge {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+.announcement-slide .slide-badge.urgent {
+  background: var(--red);
+  color: var(--white);
+}
+.announcement-slide .slide-badge.featured {
+  background: var(--navy-700);
+  color: var(--white);
+}
+.announcement-slide .slide-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--navy-900);
+  margin-bottom: 2px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.announcement-slide .slide-excerpt {
+  font-size: 0.82rem;
+  color: var(--muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.announcement-slide .slide-meta {
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.slide-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+.slide-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.slide-dots .dot.active {
+  background: var(--navy-700);
+}
+
+/* News Flash */
+.news-flash-item {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: padding-left 0.3s ease;
+}
+.news-flash-item:last-child {
+  border-bottom: none;
+}
+.news-flash-item:hover {
+  padding-left: 8px;
+}
+.news-flash-item .news-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--navy-900);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.news-flash-item .news-meta {
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.news-flash-item .news-meta .category {
+  color: var(--red);
+  font-weight: 600;
+}
+
+.empty-flash {
+  text-align: center;
+  padding: 20px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.empty-flash i {
+  font-size: 1.5rem;
+  color: var(--navy-100);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.flash-loading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.flash-loading .skeleton {
+  height: 16px;
+  background: var(--navy-100);
+  border-radius: 4px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+.flash-loading .skeleton:last-child {
+  width: 60%;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
 /* ===== WHY CHOOSE US ===== */
 .why-grid {
   display: grid;
@@ -1018,6 +1227,10 @@ footer {
   .extra-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .flash-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
   .journey::before {
     display: none;
   }
@@ -1090,6 +1303,10 @@ footer {
     bottom: 5px;
     right: 5px;
   }
+  .gallery-flash-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
 }
 </style>
 </head>
@@ -1123,8 +1340,8 @@ footer {
       <a href="about.html" class="nav-link">About</a>
       <a href="admission.html" class="nav-link">Admission</a>
       <a href="gallery.html" class="nav-link">Gallery</a>
-<a href="announcements.html" class="nav-link">Announcements</a>
-<a href="news.html" class="nav-link">News</a>
+      <a href="announcements.html" class="nav-link">Announcements</a>
+      <a href="news.html" class="nav-link">News</a>
       <a href="https://acad.com.ng/chrisdeb/login.php" class="nav-link" target="_blank" rel="noopener">Portal</a>
     </nav>
   </div>
@@ -1160,6 +1377,69 @@ footer {
     <div><span class="stat-num">100%</span><div class="stat-label">Committed to Your Child</div></div>
   </div>
 </div>
+
+<!-- ============================================ -->
+<!-- FLASH SECTIONS - Gallery, Announcements, News -->
+<!-- ============================================ -->
+<section class="section section-alt" id="flash">
+  <div class="container">
+    <span class="eyebrow" style="justify-content:center; width:100%;">Latest Updates</span>
+    <h2 class="section-title" style="margin:0 auto 1rem; text-align:center;">What's Happening at Chrisdeb</h2>
+    <p class="section-sub" style="margin:0 auto 3rem; text-align:center;">Stay connected with the latest from our school community.</p>
+
+    <div class="flash-grid">
+
+      <!-- Gallery Flash -->
+      <div class="flash-card">
+        <div class="flash-header">
+          <h3><i class="fas fa-images"></i> Gallery</h3>
+          <a href="gallery.html">View All →</a>
+        </div>
+        <div class="gallery-flash-grid" id="galleryFlash">
+          <div class="flash-loading">
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Announcements Flash -->
+      <div class="flash-card">
+        <div class="flash-header">
+          <h3><i class="fas fa-bullhorn"></i> Announcements</h3>
+          <a href="announcements.html">View All →</a>
+        </div>
+        <div class="announcement-slideshow" id="announcementFlash">
+          <div class="empty-flash">
+            <i class="fas fa-spinner fa-spin"></i>
+            Loading announcements...
+          </div>
+        </div>
+      </div>
+
+      <!-- News Flash -->
+      <div class="flash-card">
+        <div class="flash-header">
+          <h3><i class="fas fa-newspaper"></i> News &amp; Events</h3>
+          <a href="news.html">View All →</a>
+        </div>
+        <div id="newsFlash">
+          <div class="flash-loading">
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton" style="width:80%;"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- REST OF PAGE -->
+<!-- ============================================ -->
 
 <section class="section" id="why">
   <div class="container">
@@ -1440,6 +1720,9 @@ footer {
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="admission.html">Admission</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="announcements.html">Announcements</a></li>
+          <li><a href="news.html">News</a></li>
           <li><a href="https://acad.com.ng/chrisdeb/login.php" target="_blank" rel="noopener">Portal</a></li>
         </ul>
       </div>
@@ -1468,12 +1751,19 @@ footer {
   </div>
 </footer>
 
+<script src="assets/js/api.js"></script>
 <script>
+  // ============================================
+  // Mobile Navigation
+  // ============================================
   const hamburger = document.getElementById('hamburger');
   const nav = document.getElementById('mainNav');
   hamburger.addEventListener('click', () => nav.classList.toggle('open'));
   nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
 
+  // ============================================
+  // Tabs
+  // ============================================
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -1483,10 +1773,168 @@ footer {
     });
   });
 
+  // ============================================
+  // Reveal Animations
+  // ============================================
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ============================================
+  // FLASH SECTIONS - Load Dynamic Content
+  // ============================================
+
+  const API_BASE = 'https://acad.com.ng/chrisdeb/api/public';
+  const SCHOOL_ID = 8;
+
+  // ---------- Gallery Flash ----------
+  async function loadGalleryFlash() {
+    const container = document.getElementById('galleryFlash');
+    try {
+      const url = `${API_BASE}/gallery.php?school_id=${SCHOOL_ID}&limit=6`;
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (data.status === 'success' && data.images && data.images.length > 0) {
+        const baseUrl = 'https://acad.com.ng/chrisdeb/uploads/gallery/' + SCHOOL_ID + '/';
+        const images = data.images.slice(0, 6);
+        container.innerHTML = images.map(img => `
+          <div class="gallery-thumb" onclick="window.location.href='gallery.html'">
+            <img src="${baseUrl}thumbnails/${img.thumbnail_path || img.image_path}" alt="${escapeHtml(img.image_title || '')}" loading="lazy">
+          </div>
+        `).join('');
+      } else {
+        container.innerHTML = `<div class="empty-flash" style="grid-column:1/-1;"><i class="fas fa-images"></i> No images yet.</div>`;
+      }
+    } catch (error) {
+      container.innerHTML = `<div class="empty-flash" style="grid-column:1/-1;"><i class="fas fa-exclamation-circle"></i> Could not load gallery.</div>`;
+    }
+  }
+
+  // ---------- Announcements Flash (Slideshow) ----------
+  let announcementInterval = null;
+  let currentSlide = 0;
+  let announcementData = [];
+
+  async function loadAnnouncementsFlash() {
+    const container = document.getElementById('announcementFlash');
+    try {
+      const url = `${API_BASE}/announcements.php?school_id=${SCHOOL_ID}&limit=5`;
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (data.status === 'success' && data.announcements && data.announcements.length > 0) {
+        announcementData = data.announcements;
+        renderAnnouncementSlides(announcementData);
+        startAnnouncementSlideshow();
+      } else {
+        container.innerHTML = `<div class="empty-flash"><i class="fas fa-bullhorn"></i> No announcements.</div>`;
+      }
+    } catch (error) {
+      container.innerHTML = `<div class="empty-flash"><i class="fas fa-exclamation-circle"></i> Could not load announcements.</div>`;
+    }
+  }
+
+  function renderAnnouncementSlides(announcements) {
+    const container = document.getElementById('announcementFlash');
+    let slidesHtml = '';
+    let dotsHtml = '';
+
+    announcements.forEach((item, index) => {
+      const isActive = index === 0 ? 'active' : '';
+      const excerpt = item.content.length > 120 ? item.content.substring(0, 120) + '...' : item.content;
+      let badges = '';
+      if (item.is_urgent) badges += `<span class="slide-badge urgent">Urgent</span> `;
+      if (item.is_featured) badges += `<span class="slide-badge featured">Featured</span> `;
+
+      slidesHtml += `
+        <div class="announcement-slide ${isActive}" data-index="${index}" onclick="window.location.href='announcement.html?id=${item.id}'">
+          ${badges}
+          <div class="slide-title">${escapeHtml(item.title)}</div>
+          <div class="slide-excerpt">${escapeHtml(excerpt)}</div>
+          <div class="slide-meta"><i class="fas fa-calendar"></i> ${formatDate(item.created_at)}</div>
+        </div>
+      `;
+
+      dotsHtml += `<span class="dot ${isActive}" data-index="${index}" onclick="goToSlide(${index})"></span>`;
+    });
+
+    container.innerHTML = slidesHtml + `<div class="slide-dots">${dotsHtml}</div>`;
+  }
+
+  function startAnnouncementSlideshow() {
+    if (announcementInterval) clearInterval(announcementInterval);
+    if (announcementData.length <= 1) return;
+
+    announcementInterval = setInterval(() => {
+      const next = (currentSlide + 1) % announcementData.length;
+      goToSlide(next);
+    }, 5000);
+  }
+
+  function goToSlide(index) {
+    const slides = document.querySelectorAll('.announcement-slide');
+    const dots = document.querySelectorAll('.slide-dots .dot');
+
+    if (slides.length === 0) return;
+
+    slides.forEach(s => s.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active'));
+
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+    currentSlide = index;
+  }
+
+  // ---------- News Flash ----------
+  async function loadNewsFlash() {
+    const container = document.getElementById('newsFlash');
+    try {
+      const url = `${API_BASE}/news.php?school_id=${SCHOOL_ID}&limit=3`;
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (data.status === 'success' && data.data && data.data.news && data.data.news.length > 0) {
+        const news = data.data.news.slice(0, 3);
+        container.innerHTML = news.map(item => `
+          <div class="news-flash-item" onclick="window.location.href='news-single.html?slug=${item.slug}'">
+            <div class="news-title">${escapeHtml(item.title)}</div>
+            <div class="news-meta">
+              <span class="category">${escapeHtml(item.category_name || 'General')}</span>
+              <span> · </span>
+              <span><i class="fas fa-calendar"></i> ${formatDate(item.published_date || item.created_at)}</span>
+            </div>
+          </div>
+        `).join('');
+      } else {
+        container.innerHTML = `<div class="empty-flash"><i class="fas fa-newspaper"></i> No news posts.</div>`;
+      }
+    } catch (error) {
+      container.innerHTML = `<div class="empty-flash"><i class="fas fa-exclamation-circle"></i> Could not load news.</div>`;
+    }
+  }
+
+  // ---------- Utilities ----------
+  function formatDate(dateStr) {
+    if (!dateStr) return '';
+    const d = new Date(dateStr);
+    return d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+  }
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  // ---------- Initialize Flash Sections ----------
+  document.addEventListener('DOMContentLoaded', function() {
+    loadGalleryFlash();
+    loadAnnouncementsFlash();
+    loadNewsFlash();
+  });
 </script>
 </body>
 </html>
