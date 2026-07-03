@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>News & Events | Chrisdeb Academy — Olambe, Ogun State</title>
+    <meta name="description" content="Latest news, events, and stories from Chrisdeb Academy. Stay connected with our vibrant school community.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#3C3D80">
+
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.chrisdeb.acad.com.ng/news.html">
+    <meta property="og:title" content="News & Events | Chrisdeb Academy">
+    <meta property="og:description" content="Latest news, events, and stories from Chrisdeb Academy.">
+    <meta property="og:image" content="https://www.chrisdeb.acad.com.ng/logo.png">
+    <meta property="og:locale" content="en_NG">
+    <meta property="og:site_name" content="Chrisdeb Academy">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="News & Events | Chrisdeb Academy">
+    <meta name="twitter:description" content="Latest news, events, and stories from Chrisdeb Academy.">
+    <meta name="twitter:image" content="https://www.chrisdeb.acad.com.ng/logo.png">
+
+    <link rel="canonical" href="https://www.chrisdeb.acad.com.ng/news.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* News-specific styles */
+        .news-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .news-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .news-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .news-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+        .news-card .news-image {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            background: var(--navy-100);
+        }
+        .news-card .news-body {
+            padding: 24px 28px;
+        }
+        .news-card .news-body .news-category {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--red);
+            margin-bottom: 6px;
+        }
+        .news-card .news-body h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--navy-900);
+            transition: color 0.3s ease;
+        }
+        .news-card:hover .news-body h3 {
+            color: var(--red);
+        }
+        .news-card .news-body .news-meta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin-bottom: 10px;
+        }
+        .news-card .news-body .news-meta i {
+            margin-right: 4px;
+        }
+        .news-card .news-body .news-excerpt {
+            color: var(--charcoal);
+            line-height: 1.7;
+        }
+        .news-card .news-body .read-more {
+            display: inline-block;
+            color: var(--red);
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-top: 12px;
+        }
+        .news-card .news-body .read-more i {
+            transition: transform 0.3s ease;
+        }
+        .news-card:hover .news-body .read-more i {
+            transform: translateX(4px);
+        }
+
+        /* Sidebar */
+        .news-sidebar .widget {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .news-sidebar .widget h4 {
+            font-size: 1.05rem;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border);
+        }
+        .news-sidebar .widget h4 i {
+            color: var(--red);
+            margin-right: 8px;
+        }
+
+        .news-sidebar .category-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .news-sidebar .category-list button {
+            padding: 6px 16px;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            background: var(--white);
+            font-family: 'Manrope', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: var(--muted);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .news-sidebar .category-list button:hover {
+            border-color: var(--navy-700);
+            color: var(--navy-900);
+        }
+        .news-sidebar .category-list button.active {
+            background: var(--navy-700);
+            border-color: var(--navy-700);
+            color: var(--white);
+        }
+
+        .news-sidebar .recent-list {
+            list-style: none;
+        }
+        .news-sidebar .recent-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .news-sidebar .recent-list li:last-child {
+            border-bottom: none;
+        }
+        .news-sidebar .recent-list a {
+            display: block;
+            font-weight: 500;
+            color: var(--charcoal);
+            transition: color 0.3s ease;
+        }
+        .news-sidebar .recent-list a:hover {
+            color: var(--red);
+        }
+        .news-sidebar .recent-list .date {
+            font-size: 0.7rem;
+            color: var(--muted);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--muted);
+            grid-column: 1 / -1;
+        }
+        .empty-state i {
+            font-size: 3rem;
+            color: var(--navy-100);
+            margin-bottom: 15px;
+        }
+
+        /* Load More */
+        .load-more {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .news-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 768px) {
+            .news-card .news-image {
+                height: 200px;
+            }
+            .news-card .news-body {
+                padding: 18px 20px;
+            }
+            .news-card .news-body h3 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="topbar-inner">
+            <div class="topbar-left">
+                <span><i class="fas fa-phone"></i><a href="tel:08139615749">0813 961 5749</a></span>
+                <span><i class="fas fa-phone"></i><a href="tel:07067857567">0706 785 7567</a></span>
+            </div>
+            <div class="topbar-right">
+                <span><i class="fas fa-map-marker-alt"></i>Olambe, Ogun State</span>
+                <span><i class="fas fa-calendar"></i>Admissions Open 2026/2027</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="nav-wrapper">
+            <a href="index.html" class="brand">
+                <img src="logo.png" alt="Chrisdeb Academy Logo">
+                <div class="brand-text">
+                    <span class="name">CHRISDEB ACADEMY</span>
+                    <span class="tagline">A Brighter Future Begins Here</span>
+                </div>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+            <nav class="main-nav" id="mainNav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="admission.html" class="nav-link">Admission</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="announcements.html" class="nav-link">Announcements</a>
+                <a href="news.html" class="nav-link active">News</a>
+                <a href="https://acad.com.ng/chrisdeb/login.php" class="nav-link" target="_blank" rel="noopener">Portal</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="sep">/</span>
+                <span>News</span>
+            </div>
+            <h1>News &amp; Events</h1>
+            <p>Stay updated with the latest stories, events, and achievements from Chrisdeb Academy.</p>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="section">
+        <div class="container">
+            <div class="news-layout">
+                <!-- Main News Grid -->
+                <div>
+                    <div class="news-grid" id="newsGrid">
+                        <div class="empty-state">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <h3>Loading News...</h3>
+                        </div>
+                    </div>
+                    <div class="load-more" id="loadMoreContainer">
+                        <button class="btn btn-red" id="loadMoreBtn" style="display:none;">
+                            <i class="fas fa-plus"></i> Load More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="news-sidebar">
+                    <!-- Categories -->
+                    <div class="widget">
+                        <h4><i class="fas fa-tags"></i> Categories</h4>
+                        <div class="category-list" id="categoryList">
+                            <button class="active" data-category="all" onclick="filterByCategory('all')">All</button>
+                        </div>
+                    </div>
+
+                    <!-- Recent Posts -->
+                    <div class="widget">
+                        <h4><i class="fas fa-clock"></i> Recent Posts</h4>
+                        <ul class="recent-list" id="recentPosts">
+                            <li style="text-align:center; padding:20px; color:var(--muted);">
+                                <i class="fas fa-spinner fa-spin"></i> Loading...
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <div class="cta-banner">
+        <div class="container">
+            <h2>Ready to Join the Chrisdeb Family?</h2>
+            <p>Admissions are open for all levels — from Crèche to Senior Secondary. Take the first step towards your child's brighter future.</p>
+            <div class="hero-cta">
+                <a href="admission.html" class="btn btn-red" style="background:var(--white); color:var(--red);"><i class="fas fa-file-alt"></i> Apply for Admission</a>
+                <a href="about.html" class="btn btn-outline-white">Learn More About Us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <img src="logo.png" alt="Chrisdeb Academy Logo">
+                        <span class="name">Chrisdeb Academy</span>
+                    </div>
+                    <p class="footer-desc">A safe, inclusive and stimulating learning environment — building academic excellence, character and confidence from Crèche to Senior Secondary.</p>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="admission.html">Admission</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="announcements.html">Announcements</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="https://acad.com.ng/chrisdeb/login.php" target="_blank" rel="noopener">Portal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Programmes</h3>
+                    <ul class="footer-links">
+                        <li><a href="admission.html">Crèche / Nursery</a></li>
+                        <li><a href="admission.html">Primary</a></li>
+                        <li><a href="admission.html">Junior Secondary</a></li>
+                        <li><a href="admission.html">Senior Secondary</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone" style="margin-right:0.4rem;"></i><a href="tel:08139615749">0813 961 5749</a></li>
+                        <li><i class="fas fa-phone" style="margin-right:0.4rem;"></i><a href="tel:07067857567">0706 785 7567</a></li>
+                        <li><i class="fas fa-location-dot" style="margin-right:0.4rem;"></i><span>Olambe, Ogun State</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Chrisdeb Academy. All Rights Reserved.</p>
+                <p>A Brighter Future Begins Here</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/api.js"></script>
+    <script>
+        // ============================================
+        // News Page Scripts
+        // ============================================
+
+        let currentCategory = 'all';
+        let currentPage = 0;
+        const limit = 6;
+        let totalNews = 0;
+        let allNews = [];
+        let categories = [];
+        let recentPosts = [];
+
+        const newsGrid = document.getElementById('newsGrid');
+        const categoryList = document.getElementById('categoryList');
+        const recentPostsEl = document.getElementById('recentPosts');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+
+        // Mobile nav
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.getElementById('mainNav');
+        hamburger.addEventListener('click', () => nav.classList.toggle('open'));
+        nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
+        // ============================================
+        // Load News
+        // ============================================
+
+        async function loadNews(category = null, reset = true) {
+            if (reset) {
+                currentPage = 0;
+                newsGrid.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <h3>Loading News...</h3>
+                    </div>
+                `;
+                loadMoreBtn.style.display = 'none';
+            }
+
+            const offset = currentPage * limit;
+            const data = await fetchNews(category, limit, offset);
+
+            if (data.status === 'success') {
+                if (reset) {
+                    allNews = data.data?.news || [];
+                    totalNews = data.data?.total || 0;
+                    categories = data.data?.categories || [];
+                    recentPosts = data.data?.recent_posts || [];
+                } else {
+                    allNews = allNews.concat(data.data?.news || []);
+                }
+                renderNews(allNews);
+                renderCategories();
+                renderRecentPosts();
+                updateLoadMore();
+            } else {
+                newsGrid.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h3>Could Not Load News</h3>
+                        <p>${data.message || 'Please try again later.'}</p>
+                    </div>
+                `;
+            }
+        }
+
+        function renderNews(news) {
+            if (!news || news.length === 0) {
+                newsGrid.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-newspaper"></i>
+                        <h3>No News Posts</h3>
+                        <p>Check back soon for updates.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const baseUrl = 'https://acad.com.ng/chrisdeb/uploads/news/';
+            const siteUrl = 'https://chrisdeb.acad.com.ng';
+
+            newsGrid.innerHTML = news.map(item => {
+                const imageUrl = item.featured_image 
+                    ? baseUrl + API_CONFIG.schoolId + '/' + item.featured_image
+                    : 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80';
+
+                return `
+                    <article class="news-card">
+                        <img class="news-image" src="${imageUrl}" alt="${escapeHtml(item.title)}" loading="lazy">
+                        <div class="news-body">
+                            <div class="news-category">${escapeHtml(item.category_name || 'General')}</div>
+                            <h3>${escapeHtml(item.title)}</h3>
+                            <div class="news-meta">
+                                <span><i class="fas fa-user"></i> ${escapeHtml(item.author || 'Admin')}</span>
+                                <span><i class="fas fa-calendar"></i> ${formatDate(item.published_date || item.created_at)}</span>
+                                <span><i class="fas fa-eye"></i> ${item.view_count || 0} views</span>
+                            </div>
+                            <div class="news-excerpt">
+                                <p>${escapeHtml(item.content.substring(0, 200))}${item.content.length > 200 ? '...' : ''}</p>
+                            </div>
+                            <a href="news-single.html?slug=${item.slug}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        // ============================================
+        // Categories
+        // ============================================
+
+        function renderCategories() {
+            if (!categories || categories.length === 0) {
+                categoryList.innerHTML = `<button class="active" data-category="all" onclick="filterByCategory('all')">All</button>`;
+                return;
+            }
+
+            let html = `<button class="active" data-category="all" onclick="filterByCategory('all')">All</button>`;
+            categories.forEach(cat => {
+                html += `<button data-category="${cat.id}" onclick="filterByCategory('${cat.id}')">${escapeHtml(cat.category_name)}</button>`;
+            });
+            categoryList.innerHTML = html;
+        }
+
+        function filterByCategory(category) {
+            currentCategory = category;
+            document.querySelectorAll('#categoryList button').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.category == category) {
+                    btn.classList.add('active');
+                }
+            });
+            loadNews(category === 'all' ? null : category, true);
+        }
+
+        // ============================================
+        // Recent Posts
+        // ============================================
+
+        function renderRecentPosts() {
+            if (!recentPosts || recentPosts.length === 0) {
+                recentPostsEl.innerHTML = '<li style="color:var(--muted);">No recent posts.</li>';
+                return;
+            }
+
+            recentPostsEl.innerHTML = recentPosts.map(item => `
+                <li>
+                    <a href="news-single.html?slug=${item.slug}">${escapeHtml(item.title)}</a>
+                    <div class="date">${formatDate(item.published_date)}</div>
+                </li>
+            `).join('');
+        }
+
+        // ============================================
+        // Load More
+        // ============================================
+
+        function updateLoadMore() {
+            if (allNews.length < totalNews) {
+                loadMoreBtn.style.display = 'inline-flex';
+                loadMoreBtn.innerHTML = `<i class="fas fa-plus"></i> Load More (${allNews.length}/${totalNews})`;
+            } else {
+                loadMoreBtn.style.display = 'none';
+            }
+        }
+
+        loadMoreBtn.addEventListener('click', function() {
+            currentPage++;
+            loadNews(currentCategory === 'all' ? null : currentCategory, false);
+        });
+
+        // ============================================
+        // Initialize
+        // ============================================
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNews(null, true);
+        });
+    </script>
+</body>
+</html>

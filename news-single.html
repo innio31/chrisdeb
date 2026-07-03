@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>News | Chrisdeb Academy — Olambe, Ogun State</title>
+    <meta name="description" content="Read the full news story from Chrisdeb Academy.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#3C3D80">
+
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.chrisdeb.acad.com.ng/news-single.html">
+    <meta property="og:title" content="News | Chrisdeb Academy">
+    <meta property="og:description" content="Read the full news story from Chrisdeb Academy.">
+    <meta property="og:image" content="https://www.chrisdeb.acad.com.ng/logo.png">
+    <meta property="og:locale" content="en_NG">
+    <meta property="og:site_name" content="Chrisdeb Academy">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="News | Chrisdeb Academy">
+    <meta name="twitter:description" content="Read the full news story from Chrisdeb Academy.">
+    <meta name="twitter:image" content="https://www.chrisdeb.acad.com.ng/logo.png">
+
+    <link rel="canonical" href="https://www.chrisdeb.acad.com.ng/news-single.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .news-detail {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+        .news-detail .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--muted);
+            margin-bottom: 20px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .news-detail .back-link:hover {
+            color: var(--navy-900);
+        }
+
+        .news-detail .detail-image {
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin-bottom: 25px;
+            background: var(--navy-100);
+        }
+
+        .news-detail .detail-header {
+            margin-bottom: 20px;
+        }
+        .news-detail .detail-header .news-category {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--red);
+            margin-bottom: 6px;
+        }
+
+        .news-detail h1 {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            color: var(--navy-900);
+        }
+        .news-detail .detail-meta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+        .news-detail .detail-meta i {
+            margin-right: 4px;
+        }
+
+        .news-detail .detail-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--charcoal);
+        }
+        .news-detail .detail-content p {
+            margin-bottom: 16px;
+        }
+
+        .news-detail .detail-footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .news-detail .detail-footer .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .news-detail .detail-footer .tags span {
+            background: var(--navy-100);
+            color: var(--navy-700);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Comments Section */
+        .comments-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid var(--border);
+        }
+        .comments-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+        .comments-section .comment {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .comments-section .comment:last-child {
+            border-bottom: none;
+        }
+        .comments-section .comment .comment-author {
+            font-weight: 600;
+            color: var(--navy-900);
+        }
+        .comments-section .comment .comment-date {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+        .comments-section .comment .comment-text {
+            margin-top: 4px;
+            color: var(--charcoal);
+        }
+
+        .comment-form {
+            margin-top: 20px;
+        }
+        .comment-form .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.9rem;
+            transition: border-color 0.3s ease;
+        }
+        .comment-form input:focus,
+        .comment-form textarea:focus {
+            outline: none;
+            border-color: var(--navy-700);
+        }
+        .comment-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .comment-form .btn {
+            margin-top: 10px;
+        }
+
+        .loading-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--muted);
+        }
+        .loading-state i {
+            font-size: 2.5rem;
+            color: var(--navy-100);
+            margin-bottom: 15px;
+        }
+
+        .error-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--muted);
+        }
+        .error-state i {
+            font-size: 3rem;
+            color: var(--red);
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .news-detail h1 {
+                font-size: 1.6rem;
+            }
+            .news-detail .detail-content {
+                font-size: 0.95rem;
+            }
+            .comment-form .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="topbar-inner">
+            <div class="topbar-left">
+                <span><i class="fas fa-phone"></i><a href="tel:08139615749">0813 961 5749</a></span>
+                <span><i class="fas fa-phone"></i><a href="tel:07067857567">0706 785 7567</a></span>
+            </div>
+            <div class="topbar-right">
+                <span><i class="fas fa-map-marker-alt"></i>Olambe, Ogun State</span>
+                <span><i class="fas fa-calendar"></i>Admissions Open 2026/2027</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="nav-wrapper">
+            <a href="index.html" class="brand">
+                <img src="logo.png" alt="Chrisdeb Academy Logo">
+                <div class="brand-text">
+                    <span class="name">CHRISDEB ACADEMY</span>
+                    <span class="tagline">A Brighter Future Begins Here</span>
+                </div>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+            <nav class="main-nav" id="mainNav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="admission.html" class="nav-link">Admission</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="announcements.html" class="nav-link">Announcements</a>
+                <a href="news.html" class="nav-link active">News</a>
+                <a href="https://acad.com.ng/chrisdeb/login.php" class="nav-link" target="_blank" rel="noopener">Portal</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="sep">/</span>
+                <a href="news.html">News</a>
+                <span class="sep">/</span>
+                <span id="breadcrumbTitle">News Story</span>
+            </div>
+            <h1 id="pageTitle">News Story</h1>
+        </div>
+    </section>
+
+    <!-- News Detail -->
+    <section class="section">
+        <div class="container">
+            <div class="news-detail" id="newsDetail">
+                <div class="loading-state">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <h3>Loading News...</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <div class="cta-banner">
+        <div class="container">
+            <h2>Ready to Join the Chrisdeb Family?</h2>
+            <p>Admissions are open for all levels — from Crèche to Senior Secondary. Take the first step towards your child's brighter future.</p>
+            <div class="hero-cta">
+                <a href="admission.html" class="btn btn-red" style="background:var(--white); color:var(--red);"><i class="fas fa-file-alt"></i> Apply for Admission</a>
+                <a href="about.html" class="btn btn-outline-white">Learn More About Us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <img src="logo.png" alt="Chrisdeb Academy Logo">
+                        <span class="name">Chrisdeb Academy</span>
+                    </div>
+                    <p class="footer-desc">A safe, inclusive and stimulating learning environment — building academic excellence, character and confidence from Crèche to Senior Secondary.</p>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="admission.html">Admission</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="announcements.html">Announcements</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="https://acad.com.ng/chrisdeb/login.php" target="_blank" rel="noopener">Portal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Programmes</h3>
+                    <ul class="footer-links">
+                        <li><a href="admission.html">Crèche / Nursery</a></li>
+                        <li><a href="admission.html">Primary</a></li>
+                        <li><a href="admission.html">Junior Secondary</a></li>
+                        <li><a href="admission.html">Senior Secondary</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone" style="margin-right:0.4rem;"></i><a href="tel:08139615749">0813 961 5749</a></li>
+                        <li><i class="fas fa-phone" style="margin-right:0.4rem;"></i><a href="tel:07067857567">0706 785 7567</a></li>
+                        <li><i class="fas fa-location-dot" style="margin-right:0.4rem;"></i><span>Olambe, Ogun State</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Chrisdeb Academy. All Rights Reserved.</p>
+                <p>A Brighter Future Begins Here</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/api.js"></script>
+    <script>
+        // ============================================
+        // Single News Page Scripts
+        // ============================================
+
+        const newsDetail = document.getElementById('newsDetail');
+
+        // Mobile nav
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.getElementById('mainNav');
+        hamburger.addEventListener('click', () => nav.classList.toggle('open'));
+        nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
+        // ============================================
+        // Get Slug from URL
+        // ============================================
+
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // ============================================
+        // Load News
+        // ============================================
+
+        async function loadNews() {
+            const slug = getUrlParameter('slug');
+            if (!slug) {
+                newsDetail.innerHTML = `
+                    <div class="error-state">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h3>No News Selected</h3>
+                        <p>Please go back to the <a href="news.html" style="color:var(--red);">news list</a>.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const data = await fetchNewsBySlug(slug);
+
+            if (data.status === 'success' && data.data) {
+                renderNews(data.data);
+            } else {
+                newsDetail.innerHTML = `
+                    <div class="error-state">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h3>News Not Found</h3>
+                        <p>${data.message || 'The news story you\'re looking for could not be found.'}</p>
+                        <p><a href="news.html" style="color:var(--red);">View all news</a></p>
+                    </div>
+                `;
+            }
+        }
+
+        function renderNews(item) {
+            const baseUrl = 'https://acad.com.ng/chrisdeb/uploads/news/';
+            const imageUrl = item.featured_image 
+                ? baseUrl + API_CONFIG.schoolId + '/' + item.featured_image
+                : 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&q=80';
+
+            // Update page title and breadcrumb
+            document.getElementById('pageTitle').textContent = item.title;
+            document.getElementById('breadcrumbTitle').textContent = item.title;
+
+            newsDetail.innerHTML = `
+                <a href="news.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to News</a>
+                
+                <img class="detail-image" src="${imageUrl}" alt="${escapeHtml(item.title)}" loading="lazy">
+                
+                <div class="detail-header">
+                    <div class="news-category">${escapeHtml(item.category_name || 'General')}</div>
+                    <h1>${escapeHtml(item.title)}</h1>
+                    <div class="detail-meta">
+                        <span><i class="fas fa-user"></i> ${escapeHtml(item.author || 'Admin')}</span>
+                        <span><i class="fas fa-calendar"></i> ${formatDateFull(item.published_date || item.created_at)}</span>
+                        <span><i class="fas fa-eye"></i> ${item.view_count || 0} views</span>
+                    </div>
+                </div>
+                
+                <div class="detail-content">
+                    ${item.content.split('\n').map(p => `<p>${escapeHtml(p)}</p>`).join('')}
+                </div>
+                
+                <div class="detail-footer">
+                    ${item.tags ? `
+                        <div class="tags">
+                            ${item.tags.split(',').map(tag => `<span>#${escapeHtml(tag.trim())}</span>`).join('')}
+                        </div>
+                    ` : ''}
+                    <div style="font-size:0.8rem; color:var(--muted);">
+                        <i class="fas fa-clock"></i> Updated: ${formatDateFull(item.updated_at || item.created_at)}
+                    </div>
+                </div>
+
+                <!-- Comments Section -->
+                ${renderComments(item.comments || [])}
+            `;
+        }
+
+        // ============================================
+        // Render Comments
+        // ============================================
+
+        function renderComments(comments) {
+            const approvedComments = comments.filter(c => c.is_approved == 1);
+            
+            let html = `
+                <div class="comments-section">
+                    <h3><i class="fas fa-comments"></i> Comments (${approvedComments.length})</h3>
+            `;
+
+            if (approvedComments.length > 0) {
+                html += approvedComments.map(c => `
+                    <div class="comment">
+                        <div>
+                            <span class="comment-author">${escapeHtml(c.name)}</span>
+                            <span class="comment-date">${formatDateFull(c.created_at)}</span>
+                        </div>
+                        <div class="comment-text">${escapeHtml(c.comment)}</div>
+                    </div>
+                `).join('');
+            } else {
+                html += `<p style="color:var(--muted);">No comments yet. Be the first to share your thoughts!</p>`;
+            }
+
+            // Comment Form
+            html += `
+                <div class="comment-form">
+                    <h4 style="margin-bottom:15px; font-size:1.1rem;">Leave a Comment</h4>
+                    <form id="commentForm" onsubmit="submitComment(event)">
+                        <div class="form-row">
+                            <input type="text" id="commentName" placeholder="Your Name *" required>
+                            <input type="email" id="commentEmail" placeholder="Your Email (optional)">
+                        </div>
+                        <textarea id="commentText" placeholder="Write your comment here..." required></textarea>
+                        <button type="submit" class="btn btn-red">Post Comment</button>
+                    </form>
+                    <div id="commentMessage" style="margin-top:10px;"></div>
+                </div>
+            </div>`;
+
+            return html;
+        }
+
+        // ============================================
+        // Submit Comment
+        // ============================================
+
+        async function submitComment(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('commentName').value.trim();
+            const email = document.getElementById('commentEmail').value.trim();
+            const comment = document.getElementById('commentText').value.trim();
+            const messageEl = document.getElementById('commentMessage');
+
+            if (!name || !comment) {
+                messageEl.innerHTML = '<p style="color:var(--red);">Please fill in all required fields.</p>';
+                return;
+            }
+
+            const slug = getUrlParameter('slug');
+            if (!slug) {
+                messageEl.innerHTML = '<p style="color:var(--red);">Error: Could not identify this news post.</p>';
+                return;
+            }
+
+            // First get the news ID from the slug
+            try {
+                const newsData = await fetchNewsBySlug(slug);
+                if (!newsData.status === 'success' || !newsData.data) {
+                    messageEl.innerHTML = '<p style="color:var(--red);">Could not find this news post.</p>';
+                    return;
+                }
+                const newsId = newsData.data.id;
+
+                const result = await submitComment(newsId, name, email, comment);
+
+                if (result.status === 'success') {
+                    messageEl.innerHTML = '<p style="color:green;">✓ Your comment has been submitted for approval.</p>';
+                    document.getElementById('commentForm').reset();
+                } else {
+                    messageEl.innerHTML = `<p style="color:var(--red);">${result.message || 'Error submitting comment.'}</p>`;
+                }
+            } catch (error) {
+                messageEl.innerHTML = '<p style="color:var(--red);">Network error. Please try again.</p>';
+            }
+        }
+
+        // ============================================
+        // Initialize
+        // ============================================
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNews();
+        });
+    </script>
+</body>
+</html>

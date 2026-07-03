@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Announcement | Chrisdeb Academy — Olambe, Ogun State</title>
+    <meta name="description" content="Read the full announcement from Chrisdeb Academy.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#3C3D80">
+
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.chrisdeb.acad.com.ng/announcement.html">
+    <meta property="og:title" content="Announcement | Chrisdeb Academy">
+    <meta property="og:description" content="Read the full announcement from Chrisdeb Academy.">
+    <meta property="og:image" content="https://www.chrisdeb.acad.com.ng/logo.png">
+    <meta property="og:locale" content="en_NG">
+    <meta property="og:site_name" content="Chrisdeb Academy">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Announcement | Chrisdeb Academy">
+    <meta name="twitter:description" content="Read the full announcement from Chrisdeb Academy.">
+    <meta name="twitter:image" content="https://www.chrisdeb.acad.com.ng/logo.png">
+
+    <link rel="canonical" href="https://www.chrisdeb.acad.com.ng/announcement.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .announcement-detail {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .announcement-detail .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--muted);
+            margin-bottom: 20px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .announcement-detail .back-link:hover {
+            color: var(--navy-900);
+        }
+
+        .announcement-detail .detail-header {
+            margin-bottom: 20px;
+        }
+        .announcement-detail .detail-header .badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-right: 6px;
+        }
+        .announcement-detail .detail-header .badge-urgent {
+            background: var(--red);
+            color: var(--white);
+        }
+        .announcement-detail .detail-header .badge-featured {
+            background: var(--navy-700);
+            color: var(--white);
+        }
+        .announcement-detail .detail-header .badge-category {
+            background: var(--navy-100);
+            color: var(--navy-700);
+        }
+
+        .announcement-detail h1 {
+            font-size: 2rem;
+            margin: 10px 0 12px;
+            color: var(--navy-900);
+        }
+        .announcement-detail .detail-meta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+        .announcement-detail .detail-meta i {
+            margin-right: 4px;
+        }
+
+        .announcement-detail .detail-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--charcoal);
+        }
+        .announcement-detail .detail-content p {
+            margin-bottom: 16px;
+        }
+
+        .announcement-detail .detail-footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        .announcement-detail .loading-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--muted);
+        }
+        .announcement-detail .loading-state i {
+            font-size: 2.5rem;
+            color: var(--navy-100);
+            margin-bottom: 15px;
+        }
+
+        .error-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--muted);
+        }
+        .error-state i {
+            font-size: 3rem;
+            color: var(--red);
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .announcement-detail h1 {
+                font-size: 1.5rem;
+            }
+            .announcement-detail .detail-content {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="topbar-inner">
+            <div class="topbar-left">
+                <span><i class="fas fa-phone"></i><a href="tel:08139615749">0813 961 5749</a></span>
+                <span><i class="fas fa-phone"></i><a href="tel:07067857567">0706 785 7567</a></span>
+            </div>
+            <div class="topbar-right">
+                <span><i class="fas fa-map-marker-alt"></i>Olambe, Ogun State</span>
+                <span><i class="fas fa-calendar"></i>Admissions Open 2026/2027</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="nav-wrapper">
+            <a href="index.html" class="brand">
+                <img src="logo.png" alt="Chrisdeb Academy Logo">
+                <div class="brand-text">
+                    <span class="name">CHRISDEB ACADEMY</span>
+                    <span class="tagline">A Brighter Future Begins Here</span>
+                </div>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+            <nav class="main-nav" id="mainNav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="admission.html" class="nav-link">Admission</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="announcements.html" class="nav-link active">Announcements</a>
+                <a href="https://acad.com.ng/chrisdeb/login.php" class="nav-link" target="_blank" rel="noopener">Portal</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="sep">/</span>
+                <a href="announcements.html">Announcements</a>
+                <span class="sep">/</span>
+                <span id="breadcrumbTitle">Announcement</span>
+            </div>
+            <h1 id="pageTitle">Announcement</h1>
+        </div>
+    </section>
+
+    <!-- Announcement Detail -->
+    <section class="section">
+        <div class="container">
+            <div class="announcement-detail" id="announcementDetail">
+                <div class="loading-state">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <h3>Loading Announcement...</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <div class="cta-banner">
+        <div class="container">
+            <h2>Ready to Join the Chrisdeb Family?</h2>
+            <p>Admissions are open for all levels — from Crèche to Senior Secondary. Take the first step towards your child's brighter future.</p>
+            <div class="hero-cta">
+                <a href="admission.html" class="btn btn-red" style="background:var(--white); color:var(--red);"><i class="fas fa-file-alt"></i> Apply for Admission</a>
+                <a href="about.html" class="btn btn-outline-white">Learn More About Us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <img src="logo.png" alt="Chrisdeb Academy Logo">
+                        <span class="name">Chrisdeb Academy</span>
+                    </div>
+                    <p class="footer-desc">A safe, inclusive and stimulating learning environment — building academic excellence, character and confidence from Crèche to Senior Secondary.</p>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="admission.html">Admission</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="announcements.html">Announcements</a></li>
+                        <li><a href="https://acad.com.ng/chrisdeb/login.php" target="_blank" rel="noopener">Portal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Programmes</h3>
+                    <ul class="footer-links">
+                        <li><a href="admission.html">Crèche / Nursery</a></li>
+                        <li><a href="admission.html">Primary</a></li>
+                        <li><a href="admission.html">Junior Secondary</a></li>
+                        <li><a href="admission.html">Senior Secondary</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone" style="margin-right:0.4rem;"></i><a href="tel:08139615749">0813 961 5749</a></li>
+                        <li><i class="fas fa-phone" style="margin-right:0.4rem;"></i><a href="tel:07067857567">0706 785 7567</a></li>
+                        <li><i class="fas fa-location-dot" style="margin-right:0.4rem;"></i><span>Olambe, Ogun State</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Chrisdeb Academy. All Rights Reserved.</p>
+                <p>A Brighter Future Begins Here</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/api.js"></script>
+    <script>
+        // ============================================
+        // Single Announcement Page Scripts
+        // ============================================
+
+        const announcementDetail = document.getElementById('announcementDetail');
+
+        // Mobile nav
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.getElementById('mainNav');
+        hamburger.addEventListener('click', () => nav.classList.toggle('open'));
+        nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
+        // ============================================
+        // Get ID from URL
+        // ============================================
+
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // ============================================
+        // Load Announcement
+        // ============================================
+
+        async function loadAnnouncement() {
+            const id = getUrlParameter('id');
+            if (!id) {
+                announcementDetail.innerHTML = `
+                    <div class="error-state">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h3>No Announcement Selected</h3>
+                        <p>Please go back to the <a href="announcements.html" style="color:var(--red);">announcements list</a>.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const data = await fetchAnnouncementById(id);
+
+            if (data.status === 'success' && data.announcement) {
+                renderAnnouncement(data.announcement);
+            } else {
+                announcementDetail.innerHTML = `
+                    <div class="error-state">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h3>Announcement Not Found</h3>
+                        <p>${data.message || 'The announcement you\'re looking for could not be found.'}</p>
+                        <p><a href="announcements.html" style="color:var(--red);">View all announcements</a></p>
+                    </div>
+                `;
+            }
+        }
+
+        function renderAnnouncement(item) {
+            const isUrgent = item.is_urgent == 1;
+            const isFeatured = item.is_featured == 1;
+
+            let badges = '';
+            if (isUrgent) badges += `<span class="badge badge-urgent">Urgent</span> `;
+            if (isFeatured) badges += `<span class="badge badge-featured">Featured</span> `;
+            if (item.category) badges += `<span class="badge badge-category">${escapeHtml(item.category)}</span>`;
+
+            // Update page title and breadcrumb
+            document.getElementById('pageTitle').textContent = item.title;
+            document.getElementById('breadcrumbTitle').textContent = item.title;
+
+            announcementDetail.innerHTML = `
+                <a href="announcements.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Announcements</a>
+                <div class="detail-header">
+                    <div style="margin-bottom:8px;">${badges}</div>
+                    <h1>${escapeHtml(item.title)}</h1>
+                    <div class="detail-meta">
+                        <span><i class="fas fa-calendar"></i> ${formatDateFull(item.created_at)}</span>
+                        ${item.expiry_date ? `<span><i class="fas fa-clock"></i> Expires: ${formatDate(item.expiry_date)}</span>` : ''}
+                    </div>
+                </div>
+                <div class="detail-content">
+                    ${item.content.split('\n').map(p => `<p>${escapeHtml(p)}</p>`).join('')}
+                </div>
+                <div class="detail-footer">
+                    <small style="color:var(--muted);">
+                        <i class="fas fa-tag"></i> 
+                        ${item.is_urgent ? 'Urgent · ' : ''}
+                        ${item.is_featured ? 'Featured · ' : ''}
+                        Published on ${formatDateFull(item.created_at)}
+                    </small>
+                </div>
+            `;
+        }
+
+        // ============================================
+        // Initialize
+        // ============================================
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAnnouncement();
+        });
+    </script>
+</body>
+</html>
