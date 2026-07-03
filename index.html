@@ -111,6 +111,100 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <link rel="stylesheet" href="style.css">
+
+<style>
+  /* Additional style for sticky header */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Hero crest with building image */
+  .hero-crest {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-crest-ring {
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    border: 1px dashed rgba(255, 255, 255, 0.25);
+    animation: spin 60s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .hero-crest-ring-2 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .hero-crest img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.35));
+    border: 4px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .hero-crest .school-badge {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: var(--red);
+    color: var(--white);
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+  }
+
+  @media (max-width: 980px) {
+    .hero-crest-ring {
+      width: 260px;
+      height: 260px;
+    }
+    .hero-crest-ring-2 {
+      width: 230px;
+      height: 230px;
+    }
+    .hero-crest img {
+      width: 170px;
+      height: 170px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero-crest-ring {
+      width: 200px;
+      height: 200px;
+    }
+    .hero-crest-ring-2 {
+      width: 175px;
+      height: 175px;
+    }
+    .hero-crest img {
+      width: 130px;
+      height: 130px;
+    }
+  }
+</style>
 </head>
 <body>
 
@@ -160,7 +254,10 @@
     </div>
     <div class="hero-crest">
       <div class="hero-crest-ring"></div>
-      <img src="logo.png" alt="Chrisdeb Academy Crest">
+      <div class="hero-crest-ring-2"></div>
+      <!-- School building image placeholder - replace src with actual school building photo -->
+      <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&h=400&fit=crop&crop=center&q=80" alt="Chrisdeb Academy School Building">
+      <span class="school-badge">Est. 2022</span>
     </div>
   </div>
 </section>
